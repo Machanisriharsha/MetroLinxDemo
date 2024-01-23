@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet weak var email_pnTF: UITextField!
     @IBOutlet weak var forgotBtn: UIButton!
     @IBOutlet weak var logInBtn: UIButton!
@@ -19,9 +19,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var orLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setUpUI()
-        // Do any additional setup after loading the view.
+        email_pnTF.delegate = self
+        passTF.delegate = self
+    }
+    @IBAction func gotoCreateAccount(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: false, completion: nil)
     }
     
     func setUpUI(){
@@ -36,7 +44,7 @@ class LoginViewController: UIViewController {
         self.passTF.backgroundColor = .clear
         
         self.logInBtn.layer.cornerRadius = 12
-
+        
         
         self.orLbl.font = UIFont.poppinsBold(size: 16)
         self.registrationLbl.font = UIFont(name: "Don’t have an account ? Registration is easy.", size: 16)
@@ -48,15 +56,36 @@ class LoginViewController: UIViewController {
         iconImage.image = UIImage(named: "emailLogo")
         leftVeiwView.addSubview(iconImage)
         
-       
+        
         let passleftVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
         passTF.leftView = passleftVeiwView
         passTF.leftViewMode = .always
         let passiconImage = UIImageView(frame: CGRect(x: 10, y: 5, width: 27, height: 27))
         passiconImage.image = UIImage(named: "passLogo")
         passleftVeiwView.addSubview(passiconImage)
-       
+        
     }
     
+    
+}
 
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == email_pnTF {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = HexColor("#8BB8E8").cgColor
+        } else if textField == passTF {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = HexColor("#8BB8E8").cgColor
+        }
+        else {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = HexColor("#E3E3E3").cgColor
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = HexColor("#E3E3E3").cgColor
+    }
 }

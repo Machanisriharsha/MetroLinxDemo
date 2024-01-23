@@ -26,6 +26,7 @@
 		906C089C2B5F591500388318 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 906C08962B5F591500388318 /* Poppins-Light.ttf */; };
 		906C089D2B5F591500388318 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 906C08972B5F591500388318 /* Poppins-SemiBold.ttf */; };
 		906C089E2B5F591500388318 /* Poppins-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 906C08982B5F591500388318 /* Poppins-Bold.otf */; };
+		906C08A22B5F909C00388318 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906C08A12B5F909C00388318 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		906C08962B5F591500388318 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		906C08972B5F591500388318 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		906C08982B5F591500388318 /* Poppins-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.otf"; sourceTree = "<group>"; };
+		906C08A12B5F909C00388318 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				906C084C2B5F002B00388318 /* ViewController.swift */,
 				906C08792B5F2E1E00388318 /* LoginViewController.swift */,
+				906C08A12B5F909C00388318 /* SignUpViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 			files = (
 				906C087A2B5F2E1E00388318 /* LoginViewController.swift in Sources */,
 				906C087C2B5F487D00388318 /* stringExtensions.swift in Sources */,
+				906C08A22B5F909C00388318 /* SignUpViewController.swift in Sources */,
 				906C084D2B5F002B00388318 /* ViewController.swift in Sources */,
 				906C087F2B5F48E900388318 /* UIColorHelper.swift in Sources */,
 				906C08492B5F002B00388318 /* AppDelegate.swift in Sources */,
