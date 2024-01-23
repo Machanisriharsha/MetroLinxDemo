@@ -64,6 +64,13 @@ class LoginViewController: UIViewController {
         passiconImage.image = UIImage(named: "passLogo")
         passleftVeiwView.addSubview(passiconImage)
         
+        forgotBtn.titleLabel?.font = .poppinsBold(size: 14)
+        logInBtn.titleLabel?.font = .poppinsBold(size: 16)
+        
+        registrationLbl.font = .poppinsRegular(size: 16)
+        registrationLbl.textColor = HexColor("#9B9B9B")
+        
+        
     }
     
     
