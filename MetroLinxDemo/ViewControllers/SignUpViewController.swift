@@ -11,6 +11,7 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var email_pnTF: UITextField!
     @IBOutlet weak var passTF: UITextField!
+    @IBOutlet weak var conPassTF: UITextField!
     @IBOutlet weak var fullNameTF: UITextField!
     @IBOutlet weak var compTF: UITextField!
     
@@ -32,6 +33,10 @@ class SignUpViewController: UIViewController {
         passTF.delegate = self
         fullNameTF.delegate = self
         compTF.delegate = self
+        conPassTF.delegate = self
+    }
+    @IBAction func hide_showPassAction(_ sender: Any) {
+        
     }
     
     func setUpUI(){
@@ -55,16 +60,21 @@ class SignUpViewController: UIViewController {
         self.fullNameTF.layer.cornerRadius = 12
         self.fullNameTF.backgroundColor = .clear
         
+        self.conPassTF.layer.borderWidth = 1
+        self.conPassTF.layer.borderColor = UIColor(named: "borderColor")?.cgColor
+        self.conPassTF.layer.cornerRadius = 12
+        self.conPassTF.backgroundColor = .clear
+        
         self.createBtn.layer.cornerRadius = 12
 
         
         self.orLbl.font = UIFont.poppinsBold(size: 16)
-       
+        signupLbl.font = .poppinsRegular(size: 16)
         
         let leftVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
         email_pnTF.leftView = leftVeiwView
         email_pnTF.leftViewMode = .always
-        let iconImage = UIImageView(frame: CGRect(x: 10, y: 5, width: 27, height: 27))
+        let iconImage = UIImageView(frame: CGRect(x: 15, y: 5, width: 27, height: 27))
         iconImage.image = UIImage(named: "emailLogo")
         leftVeiwView.addSubview(iconImage)
         
@@ -72,22 +82,29 @@ class SignUpViewController: UIViewController {
         let passleftVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
         passTF.leftView = passleftVeiwView
         passTF.leftViewMode = .always
-        let passiconImage = UIImageView(frame: CGRect(x: 10, y: 5, width: 27, height: 27))
+        let passiconImage = UIImageView(frame: CGRect(x: 15, y: 5, width: 27, height: 27))
         passiconImage.image = UIImage(named: "passLogo")
         passleftVeiwView.addSubview(passiconImage)
+        
+        let con_passleftVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
+        conPassTF.leftView = con_passleftVeiwView
+        conPassTF.leftViewMode = .always
+        let con_passiconImage = UIImageView(frame: CGRect(x: 15, y: 5, width: 27, height: 27))
+        con_passiconImage.image = UIImage(named: "passLogo")
+        con_passleftVeiwView.addSubview(con_passiconImage)
         
         
         let fullnameVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
         fullNameTF.leftView = fullnameVeiwView
         fullNameTF.leftViewMode = .always
-        let fullnameiconImage = UIImageView(frame: CGRect(x: 10, y: 5, width: 27, height: 27))
+        let fullnameiconImage = UIImageView(frame: CGRect(x: 15, y: 5, width: 27, height: 27))
         fullnameiconImage.image = UIImage(named: "familyLogo")
         fullnameVeiwView.addSubview(fullnameiconImage)
         
         let companyleftVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
         compTF.leftView = companyleftVeiwView
         compTF.leftViewMode = .always
-        let companyiconImage = UIImageView(frame: CGRect(x: 10, y: 5, width: 27, height: 27))
+        let companyiconImage = UIImageView(frame: CGRect(x: 15, y: 5, width: 27, height: 27))
         companyiconImage.image = UIImage(named: "familyLogo")
         companyleftVeiwView.addSubview(companyiconImage)
        
@@ -108,6 +125,9 @@ extension SignUpViewController: UITextFieldDelegate {
             textField.layer.borderWidth = 1
             textField.layer.borderColor = HexColor("#8BB8E8").cgColor
         } else if textField == compTF {
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = HexColor("#8BB8E8").cgColor
+        } else if textField == conPassTF {
             textField.layer.borderWidth = 1
             textField.layer.borderColor = HexColor("#8BB8E8").cgColor
         }

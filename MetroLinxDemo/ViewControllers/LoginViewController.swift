@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
         let leftVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
         email_pnTF.leftView = leftVeiwView
         email_pnTF.leftViewMode = .always
-        let iconImage = UIImageView(frame: CGRect(x: 10, y: 5, width: 27, height: 27))
+        let iconImage = UIImageView(frame: CGRect(x: 15, y: 5, width: 27, height: 27))
         iconImage.image = UIImage(named: "emailLogo")
         leftVeiwView.addSubview(iconImage)
         
@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
         let passleftVeiwView = UIView(frame: CGRect(x: 10, y: 10, width: 50, height: 40))
         passTF.leftView = passleftVeiwView
         passTF.leftViewMode = .always
-        let passiconImage = UIImageView(frame: CGRect(x: 10, y: 5, width: 27, height: 27))
+        let passiconImage = UIImageView(frame: CGRect(x: 15, y: 5, width: 27, height: 27))
         passiconImage.image = UIImage(named: "passLogo")
         passleftVeiwView.addSubview(passiconImage)
         
